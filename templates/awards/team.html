@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+{% load staticfiles %}
+
+{%block main_title%}{{team.name}}{%endblock %}
+
+{%block content%}
+<h3>National League</h3>
+<p><img src="{%static "/img/nl-winner.png"%}" title="National League Winner"/>
+{%for trophy in team.get_nl_winner %}
+season {{trophy.season}} |
+{%endfor%}
+</p>
+<p><img src="{%static "/img/nl-second.png"%}" /></p>
+<p><img src="{%static "/img/nl-third.png"%}" /></p>
+{%endblock %}
